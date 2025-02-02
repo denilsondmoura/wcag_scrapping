@@ -1,4 +1,4 @@
-import requests
+from get_page import use_requests, use_selenium
 import re
 import time
 from bs4 import BeautifulSoup
@@ -6,16 +6,8 @@ from bs4 import BeautifulSoup
 wcag_url = 'https://www.w3.org/TR/WCAG22/'
 
 def get_page(url):
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
-    }
-    
-    response = requests.get(url, headers=headers)
-    
-    if response.status_code == 200:
-        return BeautifulSoup(response.text, 'html.parser')
-    else:
-        print(f'Page "{url}" not found: {response}')
+    return use_requests(url)
+    # return use_selenium(url)
         
 def get_conformance_level(guideline):
     conformance_level = guideline.find('p', {'class': 'conformance-level'})
@@ -96,7 +88,7 @@ if wcag_page:
             is_relevant = is_guideline_relevant(guideline)
             
             if not is_success_criterion(guideline_title) or is_relevant:
-                print(f'{success_criterion_count} - {guideline_title} ({conformance_level})')
+                print(f'{guideline_title} ({conformance_level})')
                 
             if is_relevant:
                 success_criterion_count+=1

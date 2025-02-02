@@ -1,0 +1,43 @@
+# Bytecode compilado do Python
+__pycache__/
+*.py[cod]
+
+# Arquivos de log
+*.log
+
+# Pastas de dependências e ambientes virtuais
+env/
+venv/
+ENV/
+venv.bak/
+*.egg-info/
+
+# Arquivos de configuração de IDEs
+.idea/
+.vscode/
+
+# Arquivos de configuração do Jupyter Notebook
+.ipynb_checkpoints/
+
+# Arquivos específicos do ChromeDriver/Selenium (se aplicável)
+chromedriver.log
+
+# Arquivos temporários
+*.bak
+*.swp
+
+# Arquivos de sistema
+.DS_Store       # macOS
+Thumbs.db       # Windows
+
+# Arquivos específicos do Docker (caso use)
+docker-compose.override.yml
+
+# Arquivos de configuração do pytest, coverage ou outros
+.coverage
+*.cover
+*.hypothesis/
+
+# Arquivos temporários de sistema
+*.pid
+*.seed
