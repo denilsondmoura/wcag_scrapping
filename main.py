@@ -1,4 +1,4 @@
-from get_page import use_requests, use_selenium
+from utils.get_page import use_requests, use_selenium
 import re
 import time
 from bs4 import BeautifulSoup
@@ -95,5 +95,5 @@ if wcag_page:
                 
             time.sleep(2)
 
-    print(f'Total uccess Criterion', success_criterion_count)
+    print(f'Total Success Criterion', success_criterion_count)
 
